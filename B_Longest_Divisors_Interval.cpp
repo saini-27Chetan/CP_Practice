@@ -1,22 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void process(){
-    long long n;
+void performTask(){
+    ll n;
     cin>>n;
 
-    int ans=1;
-    while(n%ans==0)
-        ans++;
+    int res=1;
+    while(n%res==0)
+        res++;
 
-    cout<<ans-1<<endl;
+    cout<<res-1<<"\n";
+    return;
 }
 
 int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
