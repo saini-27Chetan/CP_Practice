@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void process(){
+void performTask(){
     int n,q;
     cin>>n>>q;
 
@@ -16,7 +17,7 @@ void process(){
         
         prefix[i] = prefix[i-1] + a[i];
     }
-    long long sum=prefix[n-1];
+    ll sum=prefix[n-1];
 
     int l,r,k;
     vector<int> query(q);
@@ -46,7 +47,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }

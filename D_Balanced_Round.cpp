@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void process(){
+void performTask(){
     int n, k;
     cin>>n>>k;
 
@@ -12,21 +13,23 @@ void process(){
     sort(a.begin(), a.end());
 
     int st=0, i;
-    int problems = INT_MAX;
+    int ans=INT_MAX;
     for(i=1; i<n; i++){
         if(abs(a[i]-a[i-1])>k){
-            problems = min(problems, (n - (i-1-st+1)));
+            ans=min(ans, (n-(i-1-st+1)));
             st=i;
         }
     }
-    problems = min(problems, (n - (i-1-st+1)));
-    cout<<problems<<endl;
+    ans=min(ans, (n-(i-1-st+1)));
+    cout<<ans<<endl;
+    return;
 }
+
 int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
