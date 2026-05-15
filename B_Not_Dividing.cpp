@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void process(){
+void performTask(){
     int n;
     cin>>n;
 
@@ -18,9 +19,9 @@ void process(){
             a[i]+=1;
     }
 
-    for(auto x: a)
+    for(auto x:a)
         cout<<x<<" ";
-    cout<<endl;
+    cout<<"\n";
     return;
 }
 
@@ -28,7 +29,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }

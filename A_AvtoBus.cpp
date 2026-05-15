@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void process(){
-    long long n;
+void performTask(){
+    ll n;
     cin>>n;
 
     if(n<4 || n&1){
@@ -10,9 +11,9 @@ void process(){
         return;
     }
 
-    long long maxAns, minAns;
-    maxAns = n/4;
-    minAns = (n+5)/6;
+    ll maxAns, minAns;
+    maxAns=n/4;
+    minAns=(n+5)/6;
     cout<<minAns<<" "<<maxAns<<"\n";
     return;
 }
@@ -21,7 +22,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }

@@ -1,19 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void process(){
+void performTask(){
     int n;
     cin>>n;
     vector<int> a(n);
-    int countZero = 0;
+    int cnt_0=0;
     for(int i=0; i<n; i++){
         cin>>a[i];
 
         if(a[i]==0)
-            countZero++;    
+            cnt_0++;    
     }
 
-    if(countZero==n){
+    if(cnt_0==n){
         cout<<"0\n";
         return;
     }
@@ -42,7 +43,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
