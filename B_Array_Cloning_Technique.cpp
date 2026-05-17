@@ -1,39 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void process(){
+void performTask(){
     int n;
     cin>>n;
 
-    unordered_map<int, int> mp;
-    int maxNum=INT_MIN, maxFreq = INT_MIN; 
+    unordered_map<int, int> hash;
+    int maxEle=INT_MIN, freq=INT_MIN; 
     for(int i=0; i<n; i++){
         int num;
         cin>>num;
 
-        mp[num]++;
+        hash[num]++;
 
-        if(mp[num]>maxFreq){
-            maxNum = num;
-            maxFreq = mp[num];
+        if(hash[num]>freq){
+            maxEle=num;
+            freq=hash[num];
         }
     }
 
-    int left = n - maxFreq;
-    int ans=0;
-    while(left){
-        ans+=1;   // for copy
-        if(maxFreq<=left){
-            ans+=maxFreq;   // for swaps
-            left -= maxFreq;
-            maxFreq <<= 1;
+    int low=n-freq;
+    int res=0;
+    while(low){
+        res+=1;  
+        if(freq<=low){
+            res+=freq;   
+            low-=freq;
+            freq<<=1;
         }
         else{
-            ans+=left;  // for swaps
-            left=0;
+            res+=low;  
+            low=0;
         }
     }
-    cout<<ans<<"\n";
+    cout<<res<<"\n";
     return;
 }
 
@@ -41,7 +42,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
