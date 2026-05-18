@@ -1,25 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void process(){
-    long long x, n;
+void performTask(){
+    ll x,n;
     cin>>x>>n;
 
-    long long ans, mod = n%4;
+    ll res, mod=n%4;
     if(mod==0)
-        ans=0;
+        res=0;
     else if(mod==1)
-        ans=-n;
+        res=-n;
     else if(mod==2)
-        ans=1;
+        res=1;
     else
-        ans=n+1;
+        res=n+1;
 
     if(x&1)
-        ans = x-ans;
+        res=x-res;
     else
-        ans = x+ans;
-    cout<<ans<<"\n";
+        res=x+res;
+    cout<<res<<"\n";
     return;
 }
 
@@ -27,7 +28,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
