@@ -1,17 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void process(){
-    string s;
-    cin>>s;
+void performTask(){
+    string str;
+    cin>>str;
 
-    if(s[0]!=s[s.length()-1]){
-        if(s[0]=='a')
-            s[0]='b';
+    if(str[0]!=str[str.length()-1]){
+        if(str[0]=='a')
+            str[0]='b';
         else
-            s[0]='a';
+            str[0]='a';
     }
-    cout<<s<<"\n";
+    cout<<str<<"\n";
     return;
 }
 
@@ -19,7 +20,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
