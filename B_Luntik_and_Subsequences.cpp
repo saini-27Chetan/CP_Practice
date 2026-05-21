@@ -1,22 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void process(){
+void performTask(){
     int n;
     cin>>n;
 
-    int count0=0, count1=0;
+    int cnt0=0, cnt1=0;
     vector<int> a(n);
     for(int i=0; i<n; i++){
         cin>>a[i];
-
         if(a[i]==0)
-            count0++;
+            cnt0++;
         if(a[i]==1)
-            count1++;
+            cnt1++;
     }
-
-    cout<<(long long)(count1*(long long)(pow(2, count0)))<<"\n";
+    cout<<(ll)(cnt1*(ll)(pow(2, cnt0)))<<"\n";
     return;
 }
 
@@ -24,7 +23,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
