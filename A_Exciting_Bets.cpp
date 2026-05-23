@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void process(){
-    long long a,b;
+void performTask(){
+    ll a,b;
     cin>>a>>b;
 
     if(a==b){
@@ -11,13 +12,13 @@ void process(){
     }
 
     if(a<b){
-        a = a^b;
-        b = a^b;
-        a = a^b;
+        a=a^b;
+        b=a^b;
+        a=a^b;
     }
 
-    long long ans = a-b;  // gcd(a,b)=gcd(a-b, b) -> as (a-b) will remain constant so it is max gcs as of now
-    cout<<ans<<" "<<min(b%ans, ans-(b%ans))<<"\n";   
+    ll res=a-b;  // gcd(a,b)=gcd(a-b, b) -> as (a-b) will remain constant so it is max gcs as of now
+    cout<<res<<" "<<min(b%res, res-(b%res))<<"\n";   
     return;
 }
 
@@ -25,7 +26,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
