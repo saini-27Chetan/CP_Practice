@@ -1,24 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
-#define pib pair<int, bool>
 
 void performTask(){
     int n;
     cin>>n;
-    int oddCount=0;
+    vector<pair<int,bool>> a;
     for(int i=0; i<n; i++){
-        int num;
-        cin>>num;
-        if(num%2!=0) {
-            oddCount++;
-        }
+        int x;
+        cin>>x;
+        if(i%2!=0)
+            a.push_back({x,true});
+        else
+            a.push_back({x,false});
     }
 
-    if(oddCount%2==0)
-        cout<<"YES\n";
-    else
-        cout<<"NO\n";
+    sort(a.begin(), a.end());
+
+    for(int i=1; i<n; i++){
+        if(a[i].second==a[i-1].second){
+            cout<<"NO\n";
+            return;
+        }
+    }
+    cout<<"YES\n";
     return;
 }
 
