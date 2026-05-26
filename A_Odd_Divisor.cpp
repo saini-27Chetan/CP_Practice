@@ -1,12 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void process(){
-    long long n;
+void performTask(){
+    ll n;
     cin>>n;
 
-    bool check = ((n>0) && ((n&(n-1))==0));
-    if(check)
+    bool flag=((n>0) && ((n&(n-1))==0));
+    if(flag)
         cout<<"NO\n";
     else
         cout<<"YES\n";
@@ -17,7 +18,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
