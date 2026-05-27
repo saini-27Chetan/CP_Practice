@@ -2,21 +2,21 @@
 using namespace std;
 #define ll long long
 
-void process(){
+void performTask(){
     ll n, x;
     cin>>n>>x;
 
-    ll maxAns=0, minAns=0;
+    ll maxi=0, mini=0;
     vector<int> a(n);
     for(int i=0; i<n; i++){
         cin>>a[i];
-        maxAns+=ceil((double)a[i] / x);
+        maxi+=ceil((double)a[i]/x);
 
-        minAns+=a[i];
+        mini+=a[i];
     }
 
-    minAns = ceil((double)minAns / x);
-    cout<<minAns<<" "<<maxAns<<"\n";
+    mini=ceil((double)mini/x);
+    cout<<mini<<" "<<maxi<<"\n";
     return;
 }
 
@@ -24,7 +24,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
