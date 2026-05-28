@@ -2,23 +2,23 @@
 using namespace std;
 #define ll long long
 
-void process(){
+void performTask(){
     ll n,k;
     cin>>n>>k;
 
-    ll arrSize = n*k;
-    vector<ll> a(arrSize); 
-    for(int i=0; i<arrSize; i++)
+    ll sizeArr=n*k;
+    vector<ll> a(sizeArr); 
+    for(int i=0; i<sizeArr; i++)
         cin>>a[i];
 
-    ll ans=0;
-    ll ptr = arrSize;
+    ll res=0;
+    ll idx=sizeArr;
 
     while(k--){
-        ptr-=((n>>1)+1);
-        ans+=a[ptr];
+        idx-=((n>>1)+1);
+        res+=a[idx];
     }
-    cout<<ans<<"\n";
+    cout<<res<<"\n";
     return;
 }
 
@@ -26,7 +26,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
