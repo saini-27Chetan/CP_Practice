@@ -1,28 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-void process(){
-    string s;
-    cin>>s;
-
-    int count0=0, count1=0;
-    for(int i=0; i<s.length(); i++){
-        if(s[i]=='0')
-            count0++;
+ 
+void performTask(){
+    string str;
+    cin>>str;
+ 
+    int cnt0,cnt1;
+    cnt0=cnt1=0;
+    for(int i=0; i<str.length(); i++){
+        if(str[i]=='0')
+            cnt0++;
         else
-            count1++;
+            cnt1++;
     }
-
-    int minCount = min(count0, count1);
-    cout<<((minCount&1)? "DA":"NET")<<"\n";
+ 
+    int minCnt=min(cnt0,cnt1);
+    cout<<((minCnt&1)? "DA":"NET")<<"\n";
     return;
 }
-
+ 
 int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
