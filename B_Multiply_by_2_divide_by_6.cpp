@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void process(){
+void performTask(){
     int n;
     cin>>n;
 
-    int operations=0;
+    int ops=0;
     while(n>1){
         if(n%3!=0){
             cout<<"-1\n";
@@ -13,32 +13,32 @@ void process(){
         }
 
         while(n%6==0){
-            operations++;
+            ops++;
             n/=6;
         }
 
         if(n>1){
-            operations++;
+            ops++;
             n<<=1;
         }
     }
-    cout<<operations<<"\n";
+    cout<<ops<<"\n";
     return;
 }
 
 // Second Approach
-void process2(){
+void performTask2(){
     int n;
     cin>>n;
 
-    int count2=0, count3=0;
+    int cnt2=0, cnt3=0;
     while(n%2==0){
         n>>=1;
-        count2++;
+        cnt2++;
     }
     while(n%3==0){
         n/=3;
-        count3++;
+        cnt3++;
     }
 
     if(n>1){
@@ -46,8 +46,8 @@ void process2(){
         return;
     }
 
-    if(count2<=count3)
-        cout<<(count3-count2)+count3<<"\n";
+    if(cnt2<=cnt3)
+        cout<<(cnt3-cnt2)+cnt3<<"\n";
     else
         cout<<"-1\n";
     return;
@@ -57,7 +57,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
