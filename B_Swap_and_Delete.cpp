@@ -1,25 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void process(){
+void performTask(){
     string s;
     cin>>s;
 
-    int count0=0, count1=0;
+    int cnt0=0, cnt1=0;
     for(int i=0; i<s.length(); i++){
         if(s[i]=='0')
-            count0++;
+            cnt0++;
         else    
-            count1++;
+            cnt1++;
     }
 
     int i;
     for(i=0; i<s.length(); i++){
-        if(s[i]=='0' && count1)
-            count1--;
-        else if(s[i]=='1' && count0)
-            count0--;
-        else if(count1==0 || count0==0)
+        if(s[i]=='0' && cnt1)
+            cnt1--;
+        else if(s[i]=='1' && cnt0)
+            cnt0--;
+        else if(cnt1==0 || cnt0==0)
             break;
     }
 
@@ -31,7 +32,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
