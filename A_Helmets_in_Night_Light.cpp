@@ -1,19 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void process(){
-    long long n, p;
+void performTask(){
+    ll n, p;
     cin>>n>>p;
-    vector<long long> a(n), b(n);
+    vector<ll> a(n), b(n);
     for(int i=0; i<n; i++)
         cin>>a[i];
 
     for(int i=0; i<n; i++)
         cin>>b[i];
 
-    vector<pair<long long, long long>> v(n);
-    long long ans=p;
-    long long peopleInformed=1;
+    vector<pair<ll, ll>> v(n);
+    ll ans=p;
+    ll informed=1;
 
     for(int i=0; i<n; i++)
         v[i]={b[i], a[i]};
@@ -21,24 +22,24 @@ void process(){
     sort(v.begin(), v.end());
 
     for(int i=0; i<n; i++){
-        int cost = v[i].first;
-        int people = v[i].second;
+        int c=v[i].first;
+        int people=v[i].second;
 
-        if(cost>=p) // Do direct sharing
+        if(c>=p)
             break;
 
-        if((peopleInformed+people)>n){
-            ans+=(n-peopleInformed)*cost;
-            peopleInformed=n;
+        if((informed+people)>n){
+            ans+=(n-informed)*c;
+            informed=n;
             break;
         }    
         
-        ans+=people*cost;
-        peopleInformed+=people;
+        ans+=people*c;
+        informed+=people;
     }
 
-    if(peopleInformed!=n)
-        ans+=(n-peopleInformed)*p;
+    if(informed!=n)
+        ans+=(n-informed)*p;
     
     cout<<ans<<"\n";
     return;
@@ -48,7 +49,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
