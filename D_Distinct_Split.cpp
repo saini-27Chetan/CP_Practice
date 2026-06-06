@@ -2,29 +2,28 @@
 using namespace std;
 #define ll long long
 
-void process(){
+void performTask(){
     int n;
     cin>>n;
-    string s;
-    cin>>s;
+    string str;
+    cin>>str;
 
     unordered_set<char> st;
-    unordered_map<char, int> mp;
+    unordered_map<char,int> mp;
 
-    for(char ch : s)
+    for(char ch:str)
         mp[ch]++;
 
-    int ans = 0;
+    int res=0;
     for(int i=0; i<n; i++){
-        st.insert(s[i]);
-        mp[s[i]]--;
+        st.insert(str[i]);
+        mp[str[i]]--;
         
-        if(mp[s[i]]==0)
-            mp.erase(s[i]);
-
-        ans = max(ans, ((int)st.size()+ (int)mp.size()));
+        if(mp[str[i]]==0)
+            mp.erase(str[i]);
+        res=max(res, ((int)st.size()+(int)mp.size()));
     }
-    cout<<ans<<"\n";
+    cout<<res<<"\n";
     return;
 }
 
@@ -32,7 +31,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
