@@ -2,7 +2,7 @@
 using namespace std;
 #define ll long long
 
-void process(){
+void performTask(){
     int n;
     cin>>n;
 
@@ -11,15 +11,15 @@ void process(){
         return;
     }
 
-    int best=1;
+    int res=1;
     for(int i=2; i*i<=n; i++){
-        if (n % i == 0) {
-            best = max(best, i);
-            if (i != n / i)
-                best = max(best, n / i);
+        if (n%i==0) {
+            res=max(res, i);
+            if(i!=n/i)
+                res=max(res, n/i);
         }
     }
-    cout<<best<<" "<<(n-best)<<"\n";
+    cout<<res<<" "<<(n-res)<<"\n";
     return;
 }
 
@@ -27,7 +27,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
