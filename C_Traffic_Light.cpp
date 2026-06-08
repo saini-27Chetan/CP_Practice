@@ -2,27 +2,27 @@
 using namespace std;
 #define ll long long
 
-void process(){
+void performTask(){
     int n;
     char ch;
-    string s;
-    cin>>n>>ch>>s;
+    string str;
+    cin>>n>>ch>>str;
     
-    if(ch=='g') {
+    if(ch=='g'){
         cout<<0<<"\n";
         return;
     }
 
-    int ans=0, pos=-1;
-    string temp = s+s;
+    int res=0, pos=-1;
+    string temp=str+str;
     for(int i=(2*n-1); i>=0; i--){
         if(temp[i]=='g')
             pos=i;
 
         if(i<n && pos!=-1 && temp[i]==ch)
-            ans = max(ans, (pos-i));
+            res=max(res,(pos-i));
     }
-    cout<<ans<<"\n";
+    cout<<res<<"\n";
     return;
 }
 
@@ -30,7 +30,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
