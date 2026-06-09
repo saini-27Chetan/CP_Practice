@@ -2,31 +2,31 @@
 using namespace std;
 #define ll long long
 
-void process(){
-    int n, d, ans=0;
+void performTask(){
+    int n,d,res=0;
     cin>>n>>d;
 
-    vector<int> a(n);
+    vector<int> arr(n);
     for(int i=0; i<n; i++)
-        cin>>a[i];
+        cin>>arr[i];
 
-    sort(a.begin(), a.end());
+    sort(arr.begin(), arr.end());
     int j=n-1, i=0;
     while(j>=i){
-        int div = d/a[j];
-        if((div+1)*a[j] > d){
+        int div=d/arr[j];
+        if((div+1)*arr[j]>d){
             if((i+div)<=j){
                 i+=div;
-                ans++;
+                res++;
             }
         }
         j--;
     }
-    cout<<ans<<endl;
+    cout<<res<<endl;
     return;
 }
 
 int main(){
-    process();
+    performTask();
     return(0);
 }
