@@ -2,7 +2,7 @@
 using namespace std;
 #define ll long long
 
-void process(){
+void performTask(){
     ll n, k, b, s;
     cin>>n>>k>>b>>s;
 
@@ -11,14 +11,14 @@ void process(){
         return;
     }
 
-    vector<ll> ans(n);
-    ans[0]=(k*b);
-    s-=ans[0];
+    vector<ll> res(n);
+    res[0]=(k*b);
+    s-=res[0];
     for(ll i=0; i<n; i++){
-        ans[i]+=min(k-1, s);
+        res[i]+=min(k-1, s);
         s-=min(k-1, s);
     } 
-    for(auto x: ans)
+    for(auto x: res)
         cout<<x<<" "; 
     cout<<"\n";
     return;
@@ -28,7 +28,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
