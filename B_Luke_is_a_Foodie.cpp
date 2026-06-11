@@ -2,29 +2,29 @@
 using namespace std;
 #define ll long long
 
-void process(){
+void performTask(){
     int n,x;
     cin>>n>>x;
     vector<int> a(n);
     for(int i=0; i<n; i++)
         cin>>a[i];
 
-    int changes=0, prevL= a[0]-x, prevR=a[0]+x;
+    int res=0, lPrev=a[0]-x, rPrev=a[0]+x;
     for(int i=1; i<n; i++){
-        int currL=a[i]-x, currR=a[i]+x;
-        int overlapL=max(currL, prevL), overlapR=min(currR, prevR);
+        int lCurr=a[i]-x, rcurr=a[i]+x;
+        int lOverlap=max(lCurr, lPrev), rOverlap=min(rcurr, rPrev);
 
-        if(overlapL>overlapR){
-            changes++;
-            prevL=currL;
-            prevR=currR;
+        if(lOverlap>rOverlap){
+            res++;
+            lPrev=lCurr;
+            rPrev=rcurr;
         }
         else{
-            prevL=overlapL;
-            prevR=overlapR;
+            lPrev=lOverlap;
+            rPrev=rOverlap;
         }
     }
-    cout<<changes<<"\n";
+    cout<<res<<"\n";
     return;
 }
 
@@ -32,7 +32,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
