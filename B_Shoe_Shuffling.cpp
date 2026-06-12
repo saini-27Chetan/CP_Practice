@@ -2,32 +2,32 @@
 using namespace std;
 #define ll long long
 
-void process(){
+void performTask(){
     int n;
     cin>>n;
-    vector<int> a(n+1), ans(n+1);
-    vector<pair<int,int>>temp;
+    vector<int> a(n+1), res(n+1);
+    vector<pair<int,int>>t;
     for(int i=1; i<=n; i++){
         cin>>a[i];
-
-        temp.push_back({a[i],i});
+        t.push_back({a[i],i});
     }
-    sort(temp.begin(), temp.end());
+    
+    sort(t.begin(), t.end());
 
     int st=-1, end=-1;
     for(int i=1; i<n; i++){
-        if(temp[i].first!=temp[i-1].first){
+        if(t[i].first!=t[i-1].first){
             if((end-st+1)==1){
                 cout<<"-1\n";
                 return;
             }
 
-            int j=end, tempIdx=temp[end].second;
+            int j=end, tIdx=t[end].second;
             while(j>st){
-                ans[temp[j].second]=temp[j-1].second;
+                res[t[j].second]=t[j-1].second;
                 j--;
             }
-            ans[temp[j].second]=tempIdx;
+            res[t[j].second]=tIdx;
 
             st=i;
             end=i;
@@ -45,24 +45,24 @@ void process(){
         return;
     }
 
-    int j=end, tempIdx=temp[end].second;
+    int j=end, tIdx=t[end].second;
     while(j>st){
-        ans[temp[j].second]=temp[j-1].second;
+        res[t[j].second]=t[j-1].second;
         j--;
     }
-    ans[temp[j].second]=tempIdx;
+    res[t[j].second]=tIdx;
     
     for(int i=1; i<=n; i++)
-        cout<<ans[i]<<" ";
+        cout<<res[i]<<" ";
     cout<<"\n";
-    return; 
+    return;
 }
 
 int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
