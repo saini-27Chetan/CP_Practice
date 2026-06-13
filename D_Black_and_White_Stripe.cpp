@@ -2,36 +2,36 @@
 using namespace std;
 #define ll long long
 
-void process(){
+void performTask(){
     int n,k;
     cin>>n>>k;
-    string s;
-    cin>>s;
+    string str;
+    cin>>str;
 
-    int b=0, w=0, minCnt=INT_MAX;
+    int b=0, w=0, minAns=INT_MAX;
     for(int i=0; i<k; i++){
-        if(s[i]=='B')
+        if(str[i]=='B')
             b++;
         else    
             w++;
     }
 
-    minCnt=w;
+    minAns=w;
     for(int r=k; r<n; r++){
         int l=r-k;
-        if(s[l]=='B')
+        if(str[l]=='B')
             b--;
-        else if(s[l]=='W')
+        else if(str[l]=='W')
             w--;
 
-        if(s[r]=='B')
+        if(str[r]=='B')
             b++;
-        else if(s[r]=='W')
+        else if(str[r]=='W')
             w++;
 
-        minCnt=min(minCnt, w);
+        minAns=min(minAns, w);
     }
-    cout<<minCnt<<"\n";
+    cout<<minAns<<"\n";
     return;
 }
 
@@ -39,7 +39,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
