@@ -2,34 +2,36 @@
 using namespace std;
 #define ll long long
 
-void process(){
+void performTask(){
     int n,r,b;
     cin>>n>>r>>b;
    
-    string ans;
-    int numOfRed=r/(b+1), leftR=r%(b+1);
+    string res;
+    int redCnt=r/(b+1), redLeft=r%(b+1);
 
     for(int i=1; i<=(b+1); i++){
-        for(int j=0; j<numOfRed; j++)
-            ans+='R';
+        for(int j=0; j<redCnt; j++)
+            res+='R';
 
-        if(leftR>0){
-            ans+='R';
-            leftR--;
+        if(redLeft>0){
+            res+='R';
+            redLeft--;
         }
 
         if(i!=(b+1))
-            ans+='B';
+            res+='B';
     }
     
-    cout<<ans<<"\n";
+    cout<<res<<"\n";
     return;
 }
+
 int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
+    
