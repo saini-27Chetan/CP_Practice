@@ -2,7 +2,7 @@
 using namespace std;
 #define ll long long
 
-void process(){
+void performTask(){
     int n;
     cin>>n;
     if(n==1){
@@ -10,21 +10,20 @@ void process(){
         return;
     }
 
-    int temp=n-1, power=0;
-    while(temp>1){
-        temp>>=1;
-        power++;
+    int t=n-1, p=0;
+    while(t>1){
+        t>>=1;
+        p++;
     }
-    temp=pow(2,power);
+    t=pow(2,p);
 
-    for(int i=1; i<temp; i++)
+    for(int i=1; i<t; i++)
         cout<<i<<" ";
-    cout<<"0"<<" "<<temp<<" ";
+    cout<<"0"<<" "<<t<<" ";
 
-    for(int i=temp+1; i<n; i++)
+    for(int i=t+1; i<n; i++)
         cout<<i<<" ";
-    cout<<"\n";
-    
+    cout<<"\n"; 
     return;
 }
 
@@ -32,7 +31,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
