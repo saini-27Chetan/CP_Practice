@@ -2,33 +2,32 @@
 using namespace std;
 #define ll long long
 
-void process(){
+void performTask(){
     ll w,h;
     cin>>w>>h;
     
-    ll area = LLONG_MIN;
+    ll area=LLONG_MIN;
     for(int i=0; i<4; i++){
-        ll k, first, last;
+        ll k,fst,lt;
         cin>>k;
 
         for(int j=0; j<k; j++){
-            ll num;
-            cin>>num;
+            ll n;
+            cin>>n;
 
-            if(j == 0)
-                first = num;
-            if(j == k-1)
-                last = num;
+            if(j==0)
+                fst=n;
+            if(j==k-1)
+                lt=n;
         }
-        ll base = last - first;
-        ll height;
+        ll base=lt-fst, height;
 
         if(i<=1)
-            height = h;
+            height=h;
         else
-            height = w;
+            height=w;
 
-        area = max(area, base*height);
+        area=max(area, base*height);
     }
     cout<<area<<"\n";
     return;
@@ -38,7 +37,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
