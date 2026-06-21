@@ -1,28 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
-
-void process(){
+ 
+void performTask(){
     int n, k;
     cin>>n>>k;
-
-    vector<int> arr(n);
-    ll sum=0;
+ 
+    vector<int> a(n);
+    ll s=0;
     for(int i=0; i<n; i++){
-        cin>>arr[i];
-        sum+=arr[i];
+        cin>>a[i];
+        s+=a[i];
     }
-
-    ll sum2=k*n;
-    cout<<((sum%2==0 && sum2%2==1)?"NO\n":"YES\n");
+ 
+    ll s2=k*n;
+    cout<<((s%2==0 && s2%2==1)?"NO\n":"YES\n");
     return;
 }
-
+ 
 int main(){
     int t;
     cin>>t;
     while(t--){
-        process();
+        performTask();
     }
     return(0);
 }
